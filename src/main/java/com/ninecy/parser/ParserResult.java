@@ -7,7 +7,7 @@ package com.ninecy.parser;
  *
  */
 public interface ParserResult {
-    public String verboseResult();
-    public String shortResult();
-    public boolean isMatchFound();
+    String verboseResult();
+    String shortResult();
+    boolean isMatchFound();
 }

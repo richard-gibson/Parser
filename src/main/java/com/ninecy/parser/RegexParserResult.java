@@ -62,11 +62,7 @@ public class RegexParserResult implements ParserResult {
 
     @Override
     public String toString() {
-        return "RegexParserResult{" +
-                "matchFound=" + matchFound +
-                ", input='" + input + '\'' +
-                ", matchResults=" + matchResults +
-                ", locations=" + locations +
-                '}';
+        return String.format("RegexParserResult{matchFound=%s, input='%s', matchResults=%s, locations=%s}",
+                             matchFound, input, matchResults, locations);
     }
 }

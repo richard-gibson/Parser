@@ -18,11 +18,10 @@ public class ParserApp {
      * method used to run parser from CLI using sys in/out
      * as input/output streams.
      * @param args 2 arguments
-     *         : manditory specification for matching data
+     *         : mandatory specification for matching data
      *         : optional verbose flag that defaults as false if not set
      */
     public static void main(String[] args) {
-
         String specification = ArgsUtil.getMandatoryProperty("specification", args);
         Boolean verboseMode = Boolean.valueOf(ArgsUtil.getProperty("verbose", args).orElse("false"));
 
@@ -30,15 +29,11 @@ public class ParserApp {
         try(InputStream in = System.in;
             OutputStream out = System.out) {
 
-
             PatternBuilder<PatternBuilderResult> regexPatternBuilder =
                     new RegexPatternBuilder(RegexPatterns.TEMPLATE.getPattern());
-
             PatternBuilderResult patternBuilderResult = regexPatternBuilder.build(specification);
             Parser<RegexParserResult> parser = new RegexParser(patternBuilderResult);
-
             runParserStream(in,out, parser, verboseMode);
-
         }
         catch (IOException | PatternBuilderException e) {
             System.err.println(e.getMessage());

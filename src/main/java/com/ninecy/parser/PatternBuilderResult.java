@@ -22,9 +22,6 @@ public class PatternBuilderResult {
 
     @Override
     public String toString() {
-        return "PatternBuilderResult{" +
-                "pattern='" + pattern + '\'' +
-                ", locations=" + locations +
-                '}';
+        return String.format("PatternBuilderResult{pattern='%s', locations=%s}", pattern, locations);
     }
 }

@@ -17,7 +17,7 @@ Feature: Parser correctly loads Specification and uses to match relevant data fr
     | foo %{0} is a %{1S0}| foo blah is a bar | true | blah,bar |
     | the %{1} %{0S0} | the big brown fox ran away         | true | big brown fox ran,away |
     | the %{0S1} %{1} away | the big brown fox ran away         | true | big brown,fox ran |
-    | the %{0S2} %{1} away | the big bad brown fox ran away     | true | big bad brown,fox rcd an |
+    | the %{0S2} %{1} away | the big bad brown fox ran away     | true | big bad brown,fox ran |
     | the %{0S3} %{1} away | the big big bad brown fox ran away | true | big big bad brown,fox ran |
     | bar %{0G} foo %{1} | bar foo bar foo bar foo bar foo  | true | foo bar foo bar,bar foo |
     | bar %{0} foo %{1} | bar foo bar foo bar foo bar foo  | true | foo bar,bar foo bar foo |

@@ -6,5 +6,5 @@ package com.ninecy.parser;
  *
  */
 public interface Parser<T> {
-    public T parse(String input);
+    T parse(String input);
 }

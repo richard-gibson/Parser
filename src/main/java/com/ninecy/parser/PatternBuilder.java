@@ -6,5 +6,5 @@ package com.ninecy.parser;
  *
  */
 public interface PatternBuilder<T> {
-    public T build(String input) throws PatternBuilderException;
+    T build(String input) throws PatternBuilderException;
 }

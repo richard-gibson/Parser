@@ -73,17 +73,17 @@ public class ParserIntegrationTest {
 
 
         //load input data from feature table into input stream
-        try (ByteArrayOutputStream inBaos = new ByteArrayOutputStream()) {
+        try (ByteArrayOutputStream inBAOS = new ByteArrayOutputStream()) {
             for (String line : parserInput) {
-                inBaos.write((line + "\n").getBytes());
+                inBAOS.write((line + "\n").getBytes());
             }
-            InputStream inputStream = new ByteArrayInputStream(inBaos.toByteArray());
+            InputStream inputStream = new ByteArrayInputStream(inBAOS.toByteArray());
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
             ParserApp.runParserStream(inputStream, outputStream, regexParser, verboseMode);
             parserOutput = Arrays.asList(outputStream.toString(UTF_8.name()).split("\n"));
         } catch (IOException e) {
-            System.err.println(String.format("Error processing input data"));
+            System.err.println("Error processing input data");
             //throw to fail test
             throw e;
         }

@@ -32,7 +32,6 @@ esac
 done
 
 
-#if [ -n ${SPECIFICATION} ]; then usage;  fi
 if [ "${SPECIFICATION}" == "" ]; then usage;  fi
 
 BASEDIR=$(dirname $BASH_SOURCE)

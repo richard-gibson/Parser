@@ -82,7 +82,7 @@ public class RegexPatternBuilder implements PatternBuilder<PatternBuilderResult>
         try{
            return Pattern.compile(pattern);
         } catch (PatternSyntaxException pse) {
-            throw new PatternBuilderException("unable to compile regex for pattern: "+pattern, pse);
+            throw new PatternBuilderException(String.format("unable to compile regex for pattern: %s", pattern), pse);
         }
     }
 
@@ -128,7 +128,7 @@ public class RegexPatternBuilder implements PatternBuilder<PatternBuilderResult>
                         RegexPatterns.ZERO_WHITESPACE.getPattern());
 
             case UNKNOWN: default:
-                throw new PatternBuilderException("Unable to generate regex from" + captureToken);
+                throw new PatternBuilderException(String.format("Unable to generate regex from %s", captureToken));
         }
     }
 
@@ -147,7 +147,7 @@ public class RegexPatternBuilder implements PatternBuilder<PatternBuilderResult>
                         ).collect(Collectors.toList());
 
         if (new HashSet<>(captureTokenIndexes).size() < captureTokenIndexes.size())
-              throw new PatternBuilderException("duplicate index used in capture types: "+locations);
+              throw new PatternBuilderException(String.format("duplicate index used in capture types: %s", locations));
 
         return locations;
     }

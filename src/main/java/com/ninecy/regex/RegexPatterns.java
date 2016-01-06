@@ -20,7 +20,7 @@ public enum RegexPatterns {
 
     private final String pattern;
 
-    private RegexPatterns(String pattern) {
+    RegexPatterns(String pattern) {
         this.pattern = pattern;
     }
 

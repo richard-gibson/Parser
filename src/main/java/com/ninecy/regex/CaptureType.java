@@ -16,7 +16,7 @@ public enum CaptureType {
 
     private final String identifier;
 
-    private CaptureType(String identifier) {
+    CaptureType(String identifier) {
         this.identifier = identifier;
     }
 

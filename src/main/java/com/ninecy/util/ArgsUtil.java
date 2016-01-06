@@ -26,7 +26,7 @@ public class ArgsUtil {
 
     public static String getMandatoryProperty(String property,String[] args) {
         return getProperty(property, args)
-                .orElseThrow(() -> new IllegalArgumentException("Mandatory Arg ["+property+"] missing"));
+                .orElseThrow(() -> new IllegalArgumentException(String.format("Mandatory Arg [%s] missing", property)));
     }
 
 

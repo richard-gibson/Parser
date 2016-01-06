@@ -1,4 +1,4 @@
-# arser Application
+# Parser Application
 ## Deliverables Source code
 Required to run compiled code JDK/JRE 1.8+
 mvn clean install
