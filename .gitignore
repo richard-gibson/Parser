@@ -1,0 +1,11 @@
+### Java template
+target
+
+# Package Files #
+*.tar
+
+.idea
+*.iml
+.DS_Store
+
+
