@@ -1,5 +1,18 @@
 # Parser Application
-## Deliverables Source code
+This is a simple parser application that translates a pattern specification provided as an command line argument into a 
+regular expression, then parses lines of text from stdin to capture matching tokens
+
+example usage 
+```
+$ echo “big brown fox jumps over the lazy dog” | ./runParser.sh -d “%{0} jumps over %{1}”
+big brown fox jumps over the lazy dog
+%{0} - ‘big brown fox’
+%{1} - ’the lazy dog’
+```
+See [Parser.feature](./resources/cukes/Parser.feature) for more examples
+
+
+## Source code
 Required to run compiled code JDK/JRE 1.8+
 mvn clean install
 To obtain compiled program untar Parser-1.0-bundle.tar.gz from target and navigate to Parser-1.0 directory
@@ -9,13 +22,11 @@ Usage: ./runParser.sh
 example
 echo "big brown fox jumps over the lazy dog" | ./runParser.sh -d -s "%{0} jumps over %{1}"
 
-## Testing
-To run Parser tests from src directory use command
-mvn test
+
 ### Tests created
 Unit tests created to check Parser and PatternBuilder basic functionality and exception handling
 Integration tests using Parser and PatternBuilder Classes together
-<pre>
+```
 Feature: Parser correctly loads Specification and uses to match relevant data from input
 
   Scenario Outline: Process matching input
@@ -33,9 +44,8 @@ Feature: Parser correctly loads Specification and uses to match relevant data fr
       Given a parser using specification foo %{0} is a %{1} hidden
       And verbose mode is true
       And the following data as input
+```
 
-
-</pre>
 ## Possible Improvements
 * Use a separate set of regex that do not capture tokens when '-d' flag not set, currently '-d' flag only controls output formatting. Instead different implementations
 of PatternBuilder and ParserResult could be used dependent on whether flag is set to use more efficient regex that don't capture tokens.
