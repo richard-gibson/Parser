@@ -9,8 +9,7 @@ big brown fox jumps over the lazy dog
 %{0} - ‘big brown fox’
 %{1} - ’the lazy dog’
 ```
-See [Parser.feature](./resources/cukes/Parser.feature) for more examples
-
+See [Parser.feature](./src/test/resources/cukes/Parser.feature) for more examples
 
 ## Source code
 Required to run compiled code JDK/JRE 1.8+
